@@ -1,10 +1,10 @@
 # Main Menu
 # from PIL import Image, ImageFont, ImageDraw
+from famous_people import quiz
+from get_requests import get_ip, send_photo
 from info import print_logo
 from os_info import os_info
 from personal_bank import my_bank
-from famous_people import quiz
-from get_requests import get_ip
 
 menu = {'11': 'информация о системе',
         '21': 'создать папку',
@@ -68,7 +68,7 @@ def start_menu(ask=True):
             elif item == "33":
                 get_ip()
             elif item == "34":
-                pass
+                send_photo()
             elif item == "35":
                 print_logo()
             else:
