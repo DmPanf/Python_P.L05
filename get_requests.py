@@ -37,16 +37,18 @@ def send_photo():
     markdown_file = 'markdown.jpg'
     jpg_link = 'https://raw.githubusercontent.com/dnp34/AI_CNN/main/Data/markdown.jpg'
 
-    j_file = 'env.json'
-    with open(j_file) as f:  # загрузка файла
-        data = json.load(f)
-    token, chat_id = data.values()
-
     if not os.path.exists(markdown_file):
         gdown.download(jpg_link, None, quiet=True)
 
-    tgm_id = input('\nВведите свой Telegram ID: ')
-    if len(tgm_id) < 2:
-        tgm_id = chat_id
-    print('\nНачалась отправка справки по Markdown ...')
-    send_jpg(markdown_file, tgm_id, token)
+    j_file = 'env.json'
+    if os.path.exists(j_file):
+        with open(j_file) as f:  # загрузка файла
+            data = json.load(f)
+        token, chat_id = data.values()
+        tgm_id = input('\nВведите свой Telegram ID: ')
+        if len(tgm_id) < 2:
+            tgm_id = chat_id
+        print('\nНачалась отправка справки по Markdown ...')
+        send_jpg(markdown_file, tgm_id, token)
+    else:
+        print('\Отсутствует файл env.json с BOT_TOKEN!')
