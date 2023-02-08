@@ -2,6 +2,7 @@
 # from PIL import Image, ImageFont, ImageDraw
 from info import print_logo
 from os_info import os_info
+from personal_bank import my_bank
 
 menu = {'11': 'информация о системе',
         '21': 'создать папку',
@@ -61,7 +62,7 @@ def start_menu(ask=True):
             elif item == "31":
                 pass
             elif item == "32":
-                pass
+                my_bank()
             elif item == "33":
                 pass
             elif item == "34":
