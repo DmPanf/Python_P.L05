@@ -52,3 +52,4 @@ def send_photo():
         send_jpg(markdown_file, tgm_id, token)
     else:
         print('\Отсутствует файл env.json с BOT_TOKEN!')
+    return
