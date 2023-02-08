@@ -1,8 +1,9 @@
 # Main Menu
+#from PIL import Image, ImageFont, ImageDraw
+from info import print_logo
+import os
 
-def print_menu():
-    menu = { \
-        '11': 'информация о системе', \
+menu = {'11': 'информация о системе', \
         '21': 'создать папку', \
         '22': 'удалить (файл/папку)', \
         '23': 'копировать (файл/папку)', \
@@ -18,6 +19,13 @@ def print_menu():
         '00': 'выход.' \
         }
 
+
+def stop_menu():
+    print('😎 До скорой встречи!')
+    return False
+
+
+def print_menu():
     title = ' МЕНЮ '
     max_str = int((max((len(v)) for v in menu.values()) + 4 - len(title)) / 2)
     print('=' * max_str, title, '=' * max_str)
@@ -26,9 +34,25 @@ def print_menu():
     print('-' * (max_str * 2 + len(title) + 2))
     return
 
+def start_menu(ask=True):
+    print_menu()
+    while ask:
+        item = input('... Ваш выбор: ')
+        if item in menu.keys():
+            if item == "00":
+                ask = func_list(item)
+            elif item == "11":
+                func_list(item)
+            elif item == "35":
+                func_list(item)
+            else:
+                print('Ok')
+        else:
+            print(' 🚫 Ошибка выбора пункта меню!')
+
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_menu()
+    start_menu()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
