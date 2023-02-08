@@ -3,6 +3,8 @@
 from info import print_logo
 from os_info import os_info
 from personal_bank import my_bank
+from famous_people import quiz
+from get_requests import get_ip
 
 menu = {'11': 'информация о системе',
         '21': 'создать папку',
@@ -60,11 +62,11 @@ def start_menu(ask=True):
             elif item == "27":
                 pass
             elif item == "31":
-                pass
+                quiz()
             elif item == "32":
                 my_bank()
             elif item == "33":
-                pass
+                get_ip()
             elif item == "34":
                 pass
             elif item == "35":
