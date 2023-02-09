@@ -71,19 +71,22 @@ def file_copy(path1, path2):  # копировать файл или папку 
         print('\nОшибка ввода! Копировать нечего!')
     return
 
-def list_all(): # вывод всех объектов в рабочей папке
+
+def list_all():  # вывод всех объектов в рабочей папке
     path = os.getcwd()
-    print(path, ' ==>', * os.listdir(path), sep='\n')
+    print(path, ' ==>', *os.listdir(path), sep='\n')
     return
 
-def list_dir(): # вывод только папок, которые находятся в рабочей папке
+
+def list_dir():  # вывод только папок, которые находятся в рабочей папке
     path = os.getcwd()
-    folders = sorted([dir for dir in os.listdir(path) if os.path.isdir(dir)])
-    print(path, ' ==>', * folders, sep='\n')
+    folders = sorted([dirs for dirs in os.listdir(path) if os.path.isdir(dirs)])
+    print(path, ' ==>', *folders, sep='\n')
     return
 
-def list_files(): # вывод только файлов, которые находятся в рабочей папке
+
+def list_files():  # вывод только файлов, которые находятся в рабочей папке
     path = os.getcwd()
-    only_files = sorted([f for f in os.listdir(path) if os.path.isfile(f)])
-    print(path, ' ==>', * only_files, sep='\n')
+    only_files = sorted([files for files in os.listdir(path) if os.path.isfile(files)])
+    print(path, ' ==>', *only_files, sep='\n')
     return
