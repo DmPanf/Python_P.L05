@@ -1,7 +1,11 @@
 # Main Menu
 # from PIL import Image, ImageFont, ImageDraw
+from famous_people import quiz
+from get_requests import get_ip, send_photo
 from info import print_logo
 from os_info import os_info
+from personal_bank import my_bank
+from file_tools import *
 
 menu = {'11': 'информация о системе',
         '21': 'создать папку',
@@ -45,7 +49,7 @@ def start_menu(ask=True):
             elif item == "11":
                 os_info()
             elif item == "21":
-                pass
+                mk_dir(input('\nВведите новую папку для создания: '))
             elif item == "22":
                 pass
             elif item == "23":
@@ -57,15 +61,15 @@ def start_menu(ask=True):
             elif item == "26":
                 pass
             elif item == "27":
-                pass
+                change_dir(input('\nВведите новую рабочую директорию: '))
             elif item == "31":
-                pass
+                quiz()
             elif item == "32":
-                pass
+                my_bank()
             elif item == "33":
-                pass
+                get_ip()
             elif item == "34":
-                pass
+                send_photo()
             elif item == "35":
                 print_logo()
             else:
