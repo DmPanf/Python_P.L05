@@ -51,5 +51,5 @@ def send_photo():
         print('\nНачалась отправка справки по Markdown ...')
         send_jpg(markdown_file, tgm_id, token)
     else:
-        print('\Отсутствует файл env.json с BOT_TOKEN!')
+        print('\nОтсутствует файл env.json с BOT_TOKEN!')
     return
