@@ -51,15 +51,17 @@ def start_menu(ask=True):
             elif item == "21":
                 mk_dir(input('\nВведите новую папку для создания: '))
             elif item == "22":
-                pass
+                rm_dir(input('\nВведите папку или файл для удаления: '))
             elif item == "23":
-                pass
+                p1 = input('\nВведите файл/папку для копирования: ')
+                p2 = input('Введите файл/папку назначения: ')
+                file_copy(p1, p2)
             elif item == "24":
-                pass
+                list_all()
             elif item == "25":
-                pass
+                list_dir()
             elif item == "26":
-                pass
+                list_files()
             elif item == "27":
                 change_dir(input('\nВведите новую рабочую директорию: '))
             elif item == "31":
