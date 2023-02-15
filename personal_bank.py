@@ -38,7 +38,7 @@ def make_purchase(user_bank, user_purchase):  # 2. покупка
     return user_bank, user_purchase
 
 
-def user_histroy(user_bank, user_purchase):  # 3. история покупок
+def user_history(user_bank, user_purchase):  # 3. история покупок
     if len(user_purchase) > 0:
         for key, val in user_purchase.items():
             print(f' - Стоимость {key} = {val}')
@@ -51,16 +51,18 @@ def user_histroy(user_bank, user_purchase):  # 3. история покупок
 
 
 def bank_balance(user_bank):  # 4. баланс
-    print('💰 Остаток на счету:', user_bank)
-    return
+    info = f'💰 Остаток на счету: {user_bank}'
+    print(info)
+    return info
 
 
 def average_check(user_purchase):  # 5. средний чек
     if len(user_purchase) > 0:
-        print('🛒 Средний чек = ', round(sum(user_purchase.values()) / len(user_purchase), 1))
+        info = f'🛒Средний чек = {round(sum(user_purchase.values()) / len(user_purchase), 1)}'
     else:
-        print('Еще не было покупок!')
-    return
+        info = 'Еще не было покупок!'
+    print(info)
+    return info
 
 
 def my_bank():

@@ -7,6 +7,7 @@ from os_info import os_info
 from personal_bank import my_bank
 from file_tools import *
 
+
 menu = {'11': 'информация о системе',
         '21': 'создать папку',
         '22': 'удалить (файл/папку)',

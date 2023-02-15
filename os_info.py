@@ -11,4 +11,4 @@ def os_info():
         print(f'\nПлатформа MacOS [{platform}]')
     elif platform == "win32":   # Windows...
         print(f'\nПлатформа MS Windows [{platform}]')
-
+    return platform
