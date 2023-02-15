@@ -46,6 +46,7 @@ def rm_dir(path):  # удаление файла или папки в текущ
     return
 
 
+"""
 def file_copy(path1, path2):  # копировать файл или папку (задать два пути)
     if path2[0] == '/':
         if not os.path.exists(path2):
@@ -70,6 +71,21 @@ def file_copy(path1, path2):  # копировать файл или папку 
     else:
         print('\nОшибка ввода! Копировать нечего!')
     return
+"""
+
+def file_copy(source, destination):
+    if os.path.exists(source):
+        try:
+            if os.path.isdir(source):
+                shutil.copytree(source, destination)
+                print('Директория {} скопирована в {}'.format(source, destination))
+            elif os.path.isfile(source):
+                shutil.copy2(source, destination)
+                print('Файл {} скопирован в {}'.format(source, destination))
+        except Exception as e:
+            print('Ошибка копирования файлов: {}'.format(e))
+    else:
+        print('\nОшибка ввода! Копировать нечего: {}'.format(source))
 
 
 def list_all():  # вывод всех объектов в рабочей папке
