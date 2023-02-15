@@ -1,7 +1,6 @@
 # Блок функций для работы с файлами и папками
 import os
 import shutil
-from pathlib import Path
 
 
 def change_dir(path):  # смена рабочего каталога на любой другой (относительный путь применим)
@@ -73,6 +72,7 @@ def file_copy(path1, path2):  # копировать файл или папку 
     return
 """
 
+
 def file_copy(source, destination):
     if os.path.exists(source):
         try:
@@ -86,6 +86,7 @@ def file_copy(source, destination):
             print('Ошибка копирования файлов: {}'.format(e))
     else:
         print('\nОшибка ввода! Копировать нечего: {}'.format(source))
+    return
 
 
 def list_all():  # вывод всех объектов в рабочей папке
