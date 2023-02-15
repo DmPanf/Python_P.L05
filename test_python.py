@@ -10,12 +10,12 @@ import math
 
 def test_filter():
     assert list(filter(lambda x: x % 2 == 0, [1, 2, 3, 4, 5, 6])) == [2, 4, 6]
-    assert list(filter(lambda x: x.startswith('a'), ['apple', 'banana', 'avocado'])) == ['apple', 'avocado']
+    assert list(filter(lambda x: x.startswith('b'), ['books', 'tools', 'boxes'])) == ['books', 'boxes']
 
 
 def test_map():
     assert list(map(lambda x: x ** 2, [1, 2, 3, 4, 5])) == [1, 4, 9, 16, 25]
-    assert list(map(lambda x: x.upper(), ['apple', 'banana', 'avocado'])) == ['APPLE', 'BANANA', 'AVOCADO']
+    assert list(map(lambda x: x.upper(), ['car', 'tv', 'bike'])) == ['CAR', 'TV', 'BIKE']
 
 
 def test_sorted():
